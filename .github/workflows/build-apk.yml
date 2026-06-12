@@ -32,6 +32,12 @@ jobs:
     - name: Sync Capacitor Android
       run: npx cap sync android
 
+    - name: Fix Java version for all modules
+      run: |
+        find android -name "build.gradle" -exec sed -i 's/JavaVersion.VERSION_21/JavaVersion.VERSION_17/g' {} \;
+        echo "Fixed Java versions:"
+        grep -r "JavaVersion" android --include="*.gradle"
+
     - name: Build APK
       run: |
         cd android
