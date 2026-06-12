@@ -1,0 +1,26 @@
+{
+  "name": "jp-ko-dictionary",
+  "version": "1.0.0",
+  "description": "Offline Japanese-Korean Dictionary App with PWA and Android APK support",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx cap copy android",
+    "android": "npx cap open android",
+    "sync": "npx cap sync android"
+  },
+  "keywords": [
+    "dictionary",
+    "japanese",
+    "korean",
+    "offline",
+    "pwa",
+    "android"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/cli": "^7.0.0",
+    "@capacitor/core": "^7.0.0"
+  }
+}

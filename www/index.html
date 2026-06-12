@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#667eea">
+    <link rel="manifest" href="manifest.json">
+    <title>日韩词典 / 日韓辭典 / 일한사전</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>日韩词典</h1>
+            <p class="subtitle">日韓辭典 · 일한사전</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-mode-tabs">
+                <button class="tab-btn active" data-mode="ja-ko">日语 → 韩语</button>
+                <button class="tab-btn" data-mode="ko-ja">韩语 → 日语</button>
+            </div>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="输入单词搜索..." autocomplete="off">
+                <button id="searchBtn">搜索</button>
+                <button id="clearBtn">清除</button>
+            </div>
+        </div>
+
+        <div class="results-section" id="resultsSection">
+            <div class="empty-state">
+                <p>输入日语或韩语单词开始查询</p>
+                <p class="hint">支持假名、汉字、韩文搜索</p>
+            </div>
+        </div>
+
+        <div class="history-section" id="historySection">
+            <h3>查询历史</h3>
+            <div class="history-list" id="historyList"></div>
+            <button class="clear-history" id="clearHistory">清除历史</button>
+        </div>
+    </div>
+
+    <script src="js/dictionary-data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>
